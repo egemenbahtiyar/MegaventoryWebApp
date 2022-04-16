@@ -61,10 +61,15 @@ namespace MegaventoryWebApp.Controllers
             //};
             //_clientService.InsertClient(client);
 
-            var mvdiscount = new Mvdiscount { DiscountName = "Loyalty", DiscountDescription = "Loyalty Customer Discount", DiscountValue = 50 };
-            var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
-            _discountService.InsertDiscount(discount);
-            
+            //var mvdiscount = new Mvdiscount { DiscountName = "Loyalty", DiscountDescription = "Loyalty Customer Discount", DiscountValue = 50 };
+            //var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            //_discountService.InsertDiscount(discount);
+
+            var mvinventorylocation = new Mvinventorylocation { InventoryLocationAbbreviation = "Test", InventoryLocationName = "Test Project Location", InventoryLocationAddress = "Example 20, Athens " };
+            var inventorylocation = new InventoryLocation { APIKEY = APIKEY, mvInventoryLocation = mvinventorylocation, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            _inventoryLocationService.InsertInventoryLocation(inventorylocation);
+
+
 
 
 
