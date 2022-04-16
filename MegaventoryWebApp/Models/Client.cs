@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace MegaventoryWebApp.Models
 {
 
-    public class Rootobject
+    public class Client
     {
         public string APIKEY { get; set; }
         public Mvsupplierclient mvSupplierClient { get; set; }
