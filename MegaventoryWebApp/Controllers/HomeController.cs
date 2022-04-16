@@ -1,5 +1,7 @@
 ﻿using MegaventoryWebApp.Models;
+using MegaventoryWebApp.Services.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,15 +13,36 @@ namespace MegaventoryWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private IConfiguration _configuration;
+        private IClientService _clientService;
+        private IDiscountService _discountService;
+        private IInventoryLocationService _inventoryLocationService;
+        private IProductService _productService;
+        private ITaxService _taxService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController
+            (
+            IConfiguration configuration,
+            IClientService clientService,
+            IDiscountService discountService,
+            IInventoryLocationService inventoryLocationService,
+            IProductService productService,
+            ITaxService taxService
+            )
         {
-            _logger = logger;
+            _configuration = configuration;
+            _clientService = clientService;
+            _discountService = discountService;
+            _inventoryLocationService = inventoryLocationService;
+            _productService = productService;
+            _taxService = taxService;
+           
+            
         }
 
         public IActionResult Index()
         {
+            var APIKEY = _configuration["ApiKey:Key"];
             return View();
         }
 
