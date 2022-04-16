@@ -44,23 +44,29 @@ namespace MegaventoryWebApp.Controllers
         {
             var APIKEY = _configuration["ApiKey:Key"];
 
-            var mvsupplierclient = new Mvsupplierclient
-            {
-                SupplierClientEmail = "babis@exampletest.com",
-                SupplierClientName = "babis",
-                SupplierClientPhone1 = "1235698967",
-                SupplierClientShippingAddress1 = "Example 8, Athens "
-            };
-            var client = new Client
-            {
-                APIKEY = APIKEY,
-                mvInsertUpdateDeleteSourceApplication = "Magento",
-                mvSupplierClient = mvsupplierclient,
-                mvGrantPermissionsToAllUsers = "true",
-                mvRecordAction = "Insert"
-            };
-            _clientService.InsertClient(client);
-           
+            //var mvsupplierclient = new Mvsupplierclient
+            //{
+            //    SupplierClientEmail = "babis@exampletest.com",
+            //    SupplierClientName = "babis",
+            //    SupplierClientPhone1 = "1235698967",
+            //    SupplierClientShippingAddress1 = "Example 8, Athens "
+            //};
+            //var client = new Client
+            //{
+            //    APIKEY = APIKEY,
+            //    mvInsertUpdateDeleteSourceApplication = "Magento",
+            //    mvSupplierClient = mvsupplierclient,
+            //    mvGrantPermissionsToAllUsers = "true",
+            //    mvRecordAction = "Insert"
+            //};
+            //_clientService.InsertClient(client);
+
+            var mvdiscount = new Mvdiscount { DiscountName = "Loyalty", DiscountDescription = "Loyalty Customer Discount", DiscountValue = 50 };
+            var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            _discountService.InsertDiscount(discount);
+            
+
+
 
 
             return View();
