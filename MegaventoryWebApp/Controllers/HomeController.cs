@@ -44,34 +44,38 @@ namespace MegaventoryWebApp.Controllers
         {
             var APIKEY = _configuration["ApiKey:Key"];
 
-            //var mvsupplierclient = new Mvsupplierclient
-            //{
-            //    SupplierClientEmail = "babis@exampletest.com",
-            //    SupplierClientName = "babis",
-            //    SupplierClientPhone1 = "1235698967",
-            //    SupplierClientShippingAddress1 = "Example 8, Athens "
-            //};
-            //var client = new Client
-            //{
-            //    APIKEY = APIKEY,
-            //    mvInsertUpdateDeleteSourceApplication = "Magento",
-            //    mvSupplierClient = mvsupplierclient,
-            //    mvGrantPermissionsToAllUsers = "true",
-            //    mvRecordAction = "Insert"
-            //};
-            //_clientService.InsertClient(client);
+            var mvsupplierclient = new Mvsupplierclient
+            {
+                SupplierClientEmail = "babis@exampletest.com",
+                SupplierClientName = "babis",
+                SupplierClientPhone1 = "1235698967",
+                SupplierClientShippingAddress1 = "Example 8, Athens "
+            };
+            var client = new Client
+            {
+                APIKEY = APIKEY,
+                mvInsertUpdateDeleteSourceApplication = "Magento",
+                mvSupplierClient = mvsupplierclient,
+                mvGrantPermissionsToAllUsers = "true",
+                mvRecordAction = "Insert"
+            };
+            _clientService.InsertClient(client);
 
-            //var mvdiscount = new Mvdiscount { DiscountName = "Loyalty", DiscountDescription = "Loyalty Customer Discount", DiscountValue = 50 };
-            //var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
-            //_discountService.InsertDiscount(discount);
+            var mvdiscount = new Mvdiscount { DiscountName = "Loyalty", DiscountDescription = "Loyalty Customer Discount", DiscountValue = 50 };
+            var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            _discountService.InsertDiscount(discount);
 
-            //var mvinventorylocation = new Mvinventorylocation { InventoryLocationAbbreviation = "Test", InventoryLocationName = "Test Project Location", InventoryLocationAddress = "Example 20, Athens " };
-            //var inventorylocation = new InventoryLocation { APIKEY = APIKEY, mvInventoryLocation = mvinventorylocation, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
-            //_inventoryLocationService.InsertInventoryLocation(inventorylocation);
+            var mvinventorylocation = new Mvinventorylocation { InventoryLocationAbbreviation = "Test", InventoryLocationName = "Test Project Location", InventoryLocationAddress = "Example 20, Athens " };
+            var inventorylocation = new InventoryLocation { APIKEY = APIKEY, mvInventoryLocation = mvinventorylocation, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            _inventoryLocationService.InsertInventoryLocation(inventorylocation);
 
             var mvproduct = new Mvproduct { ProductDescription = "Nike shoes", ProductSKU = "1112256", ProductSellingPrice = 99.99, ProductPurchasePrice = 44.99 };
             var product = new Product { APIKEY = APIKEY, mvProduct = mvproduct, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
             _productService.InsertProduct(product);
+
+            var mvtax = new Mvtax { TaxDescription = "VAT GR", TaxName = "VAT", TaxValue = 24 };
+            var tax = new Tax { APIKEY = APIKEY, mvTax = mvtax, mvInsertUpdateDeleteSourceApplication = "Magento", mvRecordAction = "Insert" };
+            _taxService.InsertTax(tax);
 
 
 
