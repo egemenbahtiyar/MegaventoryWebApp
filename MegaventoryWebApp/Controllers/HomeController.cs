@@ -65,9 +65,14 @@ namespace MegaventoryWebApp.Controllers
             //var discount = new Discount { APIKEY = APIKEY, mvDiscount = mvdiscount, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
             //_discountService.InsertDiscount(discount);
 
-            var mvinventorylocation = new Mvinventorylocation { InventoryLocationAbbreviation = "Test", InventoryLocationName = "Test Project Location", InventoryLocationAddress = "Example 20, Athens " };
-            var inventorylocation = new InventoryLocation { APIKEY = APIKEY, mvInventoryLocation = mvinventorylocation, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
-            _inventoryLocationService.InsertInventoryLocation(inventorylocation);
+            //var mvinventorylocation = new Mvinventorylocation { InventoryLocationAbbreviation = "Test", InventoryLocationName = "Test Project Location", InventoryLocationAddress = "Example 20, Athens " };
+            //var inventorylocation = new InventoryLocation { APIKEY = APIKEY, mvInventoryLocation = mvinventorylocation, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            //_inventoryLocationService.InsertInventoryLocation(inventorylocation);
+
+            var mvproduct = new Mvproduct { ProductDescription = "Nike shoes", ProductSKU = "1112256", ProductSellingPrice = 99.99, ProductPurchasePrice = 44.99 };
+            var product = new Product { APIKEY = APIKEY, mvProduct = mvproduct, mvInsertUpdateDeleteSourceApplication = "WooCommerce", mvRecordAction = "Insert" };
+            _productService.InsertProduct(product);
+
 
 
 
