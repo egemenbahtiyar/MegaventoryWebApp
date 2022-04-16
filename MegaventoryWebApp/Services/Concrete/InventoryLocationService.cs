@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaventoryWebApp.Services.Concrete
 {
-    public class InventoryLocationService : IInventoryLocation
+    public class InventoryLocationService : IInventoryLocationService
     {
         public void InsertInventoryLocation(InventoryLocation inventoryLocation)
         {
