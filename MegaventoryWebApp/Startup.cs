@@ -1,3 +1,5 @@
+using MegaventoryWebApp.Services.Abstract;
+using MegaventoryWebApp.Services.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,13 @@ namespace MegaventoryWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // Dependency Injection Part
+            services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IDiscountService, DiscountService>();
+            services.AddScoped<IInventoryLocationService, InventoryLocationService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ITaxService, TaxService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

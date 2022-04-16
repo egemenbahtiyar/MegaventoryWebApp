@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MegaventoryWebApp.Services.Abstract
 {
-    public interface IInventoryLocation
+    public interface IInventoryLocationService
     {
         void InsertInventoryLocation(InventoryLocation inventoryLocation);
     }
