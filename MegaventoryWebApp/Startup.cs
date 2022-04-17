@@ -33,6 +33,7 @@ namespace MegaventoryWebApp
             services.AddScoped<IInventoryLocationService, InventoryLocationService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ITaxService, TaxService>();
+            services.AddScoped<ISalesOrderService, SalesOrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
