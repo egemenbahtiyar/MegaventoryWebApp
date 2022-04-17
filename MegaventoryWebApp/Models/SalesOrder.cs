@@ -17,7 +17,6 @@ namespace MegaventoryWebApp.Models
     {
         public int SalesOrderInventoryLocationID { get; set; }
         public int SalesOrderClientId { get; set; }
-        public int SalesOrderTypeId { get; set; }
         public string SalesOrderStatus { get; set; }
         public Salesorderdetail[] SalesOrderDetails { get; set; }
     }
